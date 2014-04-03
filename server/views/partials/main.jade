@@ -2,3 +2,9 @@
    .jumbotron
       h1 InstantJitsu
          p Welcome to InstantJitsu! Learn and share the best jiu jitsu moves with your friends!
+
+   .row
+      .col-md-6
+         div(ng-include="'/partials/featured-moves'")
+      .col-md-6
+         div(ng-include="'/partials/new-moves'")
