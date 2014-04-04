@@ -1,3 +1,5 @@
 .panel.panel-primary
    .panel-heading.text-center Featured Videos
-   .panel-body Body Goes here
+   .panel-body 
+      .row(ng-repeat="video in videos | filter:{featured:true}")
+         .col-md-12{{video.name}}

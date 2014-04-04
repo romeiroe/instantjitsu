@@ -1,3 +1,6 @@
 .panel.panel-primary
    .panel-heading.text-center New Videos
-   .panel-body Body Goes here
+   .panel-body 
+      .row(ng-repeat="video in videos | orderBy:'published':true | limitTo:10")
+         .col-md-3{{video.published | date: 'MMM d'}}
+         .col-md-9 {{video.name}}
