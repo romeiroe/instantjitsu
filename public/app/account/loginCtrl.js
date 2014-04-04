@@ -1,5 +1,5 @@
-angular.module('app').controller('loginCtrl', function($scope){
-   $scope.sigin = function(username,password) {
+angular.module('myApp').controller('loginCtrl', function($scope){
+   $scope.signin = function(username,password) {
       console.log('Im not done');
    }
-})
+});
