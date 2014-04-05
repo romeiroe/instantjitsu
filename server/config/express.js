@@ -1,5 +1,5 @@
 var express = require('express'),
-var stylus = require('stylus');
+    stylus = require('stylus');
 
 module.exports = function(app, config) {
    function compile(str,path){

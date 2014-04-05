@@ -5,28 +5,11 @@ var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var app = express();
 
-var config = {
-  rootPath: __dirname
-}
+var config = require('./server/config/config')[env];
 
 require('./server/config/express')(app, config);
-//connect to mongoose and put instance in variable
-// log errors to console
-mongoose.connect('mongodb://localhost/instantjitsu');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error....'));
-db.once('open', function callback() {
-  console.log('instantjitsu db opened');
-});
+require('./server/config/mongoose')(config);
+require('./server/config/routes')(app);
 
-app.get('/partials/*', function(req, res){
-  res.render('../../public/app/' + req.params);
-});
-
-app.get('*', function(req, res){
-   res.render('index');
-});
-
-var port = 3030;
-app.listen(port);
-console.log('Listening on port ' + port + '...');
+app.listen(config.port);
+console.log('Listening on port ' + config.port + '...');
