@@ -12,7 +12,7 @@ angular.module('myApp').controller('loginCtrl', function($scope, $http, ijIdenti
    }
 
    $scope.signout = function(){
-      ijAuth.logoutUser().then(function){
+      ijAuth.logoutUser().then(function(){
          $scope.username = "";
          $scope.password = "";
          ijNotifier.notifySuccess('You have succesfully logged out');
