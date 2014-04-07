@@ -8,7 +8,7 @@
 
    ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
       li.dropdown
-         a.dropdown-toggle(href="", data-toggle)
+         a.dropdown-toggle(href="", data-toggle="dropdown")
             | {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
             b.caret
          ul.dropdown-menu
