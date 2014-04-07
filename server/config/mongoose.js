@@ -45,6 +45,6 @@ function createSalt(){
 //password with given salt with sha1 algo
 function hashPwd(salt, pwd){
    var hmac = crypto.createHmac('sha1', salt);
-   return hmac.upate(pwd).digest('hex');
+   return hmac.update(pwd).digest('hex');
 }
 
