@@ -3,10 +3,10 @@ angular.module('myApp').controller('loginCtrl', function($scope, $http, ijIdenti
       $http.post('/login', {userName:username, password:password}).then(function(response){
          if(response.data.success){
             ijIdentity.currentUser = response.data.user;
-            ijNotifier.notify('You have successfully signed in!');
+            ijNotifier.notifySuccess('You have successfully signed in!');
          }
          else{
-            ijNotifier.notify('Username/Password combination incorrect!');
+            ijNotifier.notifyError('Username/Password combination incorrect!');
          }
       })
    }
