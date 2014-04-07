@@ -11,7 +11,7 @@ module.exports = function(config){
    var userSchema = mongoose.Schema({
       firstName: String,
       lastName: String,
-      userName: String
+      username: String
    });
 
    var User = mongoose.model('User', userSchema);
@@ -19,9 +19,9 @@ module.exports = function(config){
    // create default users if collection is empty
    User.find({}).exec(function(err,collection){
       if (collection.length === 0) {
-         User.create({firstName:'Eduardo', lastName:'Romeiro', userName:'eddie'});
-         User.create({firstName:'Carlos', lastName:'Miranda', userName:'carlos'});
-         User.create({firstName:'Norberto', lastName:'Caceres', userName:'norberto'});
+         User.create({firstName:'Eduardo', lastName:'Romeiro', username:'eddie'});
+         User.create({firstName:'Carlos', lastName:'Miranda', username:'carlos'});
+         User.create({firstName:'Norberto', lastName:'Caceres', username:'norberto'});
       }
    });
 }
