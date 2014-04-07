@@ -14,7 +14,12 @@ module.exports = function(app){
          if(!user){
             res.send({success: false});
          }
+         req.login(user, function(err){
+            if (err) {return next(err);}
+            res.send({success:true, user: user});
+         })
       })
+      auth(req, res, next);
    });
 
    app.get('*', function(req, res){
