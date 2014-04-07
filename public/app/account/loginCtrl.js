@@ -1,5 +1,12 @@
-angular.module('myApp').controller('loginCtrl', function($scope){
+angular.module('myApp').controller('loginCtrl', function($scope, $http){
    $scope.signin = function(username,password) {
-      console.log('Im not done');
+      $http.post('/login', {username:username, password:password}).then(function(response){
+         if(response.data.success){
+            console.log('logged in!');
+         }
+         else{
+            console.log('failed to login!');
+         }
+      })
    }
 });
