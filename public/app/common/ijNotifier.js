@@ -1,6 +1,6 @@
-angular.module('Myapp').value('ijToastr', toastr);
+angular.module('myApp').value('ijToastr', toastr);
 
-angular.module('Myapp').factory('ijNotifier', function(ijToastr){
+angular.module('myApp').factory('ijNotifier', function(ijToastr){
    return {
       notify: function(msg){
          ivToastr.success(msg);
