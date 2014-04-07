@@ -2,10 +2,10 @@ angular.module('myApp').controller('loginCtrl', function($scope, $http){
    $scope.signin = function(username,password) {
       $http.post('/login', {userName:username, password:password}).then(function(response){
          if(response.data.success){
-            console.log('logged in!');
+            ijNotifier.notify('You have successfully signed in!');
          }
          else{
-            console.log('failed to login!');
+            ijNotifier.notify('Username/Password combination incorrect!');
          }
       })
    }
