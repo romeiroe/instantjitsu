@@ -10,4 +10,4 @@ angular.module('myApp').factory('ijIdentity', function($window, ijUser){
          return !!this.currentUser;
       }
    }
-})
+});

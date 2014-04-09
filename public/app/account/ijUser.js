@@ -6,4 +6,4 @@ angular.module('myApp').factory('ijUser', function($resource) {
    }
 
    return UserResource;
-})
+});
