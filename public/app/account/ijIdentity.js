@@ -1,7 +1,8 @@
-angular.module('myApp').factory('ijIdentity', function($window){
+angular.module('myApp').factory('ijIdentity', function($window, ijUser){
    var currentUser;
    if(!!$window.bootstrappedUserObject){
-      currentUser = $window.bootstrappedUserObject;
+      currentUser = new ijUser();
+      angular.extend(currentUser, $window.bootstrappedUserObject);
    }
    return {
       currentUser: currentUser,
