@@ -1,18 +1,18 @@
 angular.module('myApp', ['ngResource', 'ngRoute']);
 
 angular.module('myApp').config(function($routeProvider, $locationProvider){
+   var routeRoleChecks = {
+      admin: {auth: function(ijAuth) {
+         return ijAuth.authorizeCurrentUserForRoute('admin');
+      }}
+   }
+
    $locationProvider.html5Mode(true);
    $routeProvider.
        when('/', {templateUrl: '/partials/main/main', controller: 'mainCtrl'}).
        when('/admin/users', {templateUrl: '/partials/admin/user-list', 
-         controller: 'userListCtrl',
-         resolve: {
-            auth: function(ijAuth) {
-               return ijAuth.authorizeCurrentUserForRoute('admin');
-            }
-         }
+         controller: 'userListCtrl', resolve: routeRoleChecks.admin
       });
-
 });
 
 angular.module('myApp').run(function($rootScope, $location){

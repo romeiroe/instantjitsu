@@ -23,12 +23,13 @@ angular.module('myApp').factory('ijAuth', function($http, ijIdentity, $q, ijUser
          });
          return dfd.promise;
       },
-   authorizeCurrentUserForRoute: function(role) {
-      if (ijIdentity.isAuthorized(role)){
-            return true;
-      }
-      else {
-         return $q.reject('not authorized');
+      authorizeCurrentUserForRoute: function(role) {
+         if (ijIdentity.isAuthorized(role)){
+               return true;
+         }
+         else {
+            return $q.reject('not authorized');
+         }
       }
    }
 });

@@ -10,7 +10,7 @@ angular.module('myApp').factory('ijIdentity', function($window, ijUser){
          return !!this.currentUser;
       },
       isAuthorized: function(role){
-         return !!ijIdentity.currentUser && ijIdentity.currentUser.roles.indexOf(role) > -1;
+         return !!this.currentUser && this.currentUser.roles.indexOf(role) > -1;
       }
    }
 });
