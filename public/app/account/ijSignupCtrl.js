@@ -3,8 +3,8 @@ angular.module('myApp').controller('ijSignupCtrl', function($scope, ijNotifier, 
       var newUserData = {
          username: $scope.email,
          password: $scope.password,
-         firstname: $scope.fname,
-         lastname: $scope.lname
+         firstName: $scope.fname,
+         lastName: $scope.lname
       };
 
       ijAuth.createUser(newUserData).then(function(){
