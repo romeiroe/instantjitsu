@@ -4,6 +4,9 @@ angular.module('myApp').config(function($routeProvider, $locationProvider){
    var routeRoleChecks = {
       admin: {auth: function(ijAuth) {
          return ijAuth.authorizeCurrentUserForRoute('admin');
+      }},
+      user: {auth: function (ijAuth){
+        return ijAuth.authorizeAuthenticatedUserForRoute();
       }}
    }
 
@@ -13,7 +16,10 @@ angular.module('myApp').config(function($routeProvider, $locationProvider){
        when('/admin/users', {templateUrl: '/partials/admin/user-list', 
          controller: 'userListCtrl', resolve: routeRoleChecks.admin}).
        when('/signup', {templateUrl: '/partials/account/signup',
-          controller: 'ijSignupCtrl'});
+          controller: 'ijSignupCtrl'}).
+       when('/profile', {templateUrl: '/partials/account/profile',
+          controller: 'ijProfileCtrl', resolve: routeRoleChecks.users
+        });
 });
 
 angular.module('myApp').run(function($rootScope, $location){

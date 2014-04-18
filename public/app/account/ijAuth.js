@@ -45,6 +45,14 @@ angular.module('myApp').factory('ijAuth', function($http, ijIdentity, $q, ijUser
          else {
             return $q.reject('not authorized');
          }
+      },
+      authorizeAuthenticatedUserForRoute: function() {
+         if(ijIdentity.isAuthenticated()){
+            return true;
+         }
+         else{
+            return $q.reject('not authorized');
+         }
       }
    }
 });
