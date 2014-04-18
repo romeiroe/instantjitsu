@@ -11,8 +11,9 @@ angular.module('myApp').config(function($routeProvider, $locationProvider){
    $routeProvider.
        when('/', {templateUrl: '/partials/main/main', controller: 'mainCtrl'}).
        when('/admin/users', {templateUrl: '/partials/admin/user-list', 
-         controller: 'userListCtrl', resolve: routeRoleChecks.admin
-      });
+         controller: 'userListCtrl', resolve: routeRoleChecks.admin}).
+       when('/signup', {templateUrl: '/partials/account/signup',
+          controller: 'ijSignupCtrl'});
 });
 
 angular.module('myApp').run(function($rootScope, $location){

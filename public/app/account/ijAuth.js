@@ -15,6 +15,21 @@ angular.module('myApp').factory('ijAuth', function($http, ijIdentity, $q, ijUser
          });
          return dfd.promise;
       },
+
+      createUser: function(newUserData){
+         var newUser = new ijUser(newUserData);
+         var dfd = $q.defer();
+
+         newUser.$save().then(function(){
+            ijIdentity.currentUser = newUser;
+            dfd.resolve();
+         }, function(response) {
+            dfd.reject(response.data.reason);
+         });
+         
+         return dfd.promise;
+      },
+      
       logoutUser: function(){
          var dfd = $q.defer();
          $http.post('/logout', {logout: true}).then(function(){
