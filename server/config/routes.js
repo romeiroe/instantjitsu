@@ -13,7 +13,7 @@ module.exports = function(app){
 
    app.put('/api/users', users.updateUser);
 
-   app.get('api/videos', videos.getVideos);
+   app.get('/api/videos', videos.getVideos);
 
    app.get('/partials/*', function(req, res){
       res.render('../../public/app/' + req.params);
