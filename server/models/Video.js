@@ -30,7 +30,7 @@ function createDefaultVideos(){
          Video.create({title: 'Omoplatas', featured: false, published: new Date('10/30/2013'), tags:['bjj']}),
          Video.create({title: 'Take Down Defense', featured: true, published: new Date('1/23/2014'), tags:['bjj']}),
          Video.create({title: 'How to eat for BJJ', featured: false, published: new Date('2/22/2014'), tags:['bjj']}),
-         Video.create({title: 'Turtle Counters', featured: true, published: new Date('3/10/2014'), tags:['bjj']}),
+         Video.create({title: 'Turtle Counters', featured: true, published: new Date('3/16/2014'), tags:['bjj']}),
          Video.create({title: 'Closed Guard Sweeps', featured: true, published: new Date('4/16/2014'), tags:['bjj']})
       }
    });
