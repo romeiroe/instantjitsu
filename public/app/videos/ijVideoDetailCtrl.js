@@ -2,7 +2,7 @@ angular.module('myApp').controller('ijVideoDetailCtrl', function($scope, ijCache
    ijCachedVideos.query().$promise.then(function(collection) {
       collection.forEach(function(video){
          if(video._id === $routeParams.id){
-            $scope.course = course;
+            $scope.video = video;
          }
       });
    })
