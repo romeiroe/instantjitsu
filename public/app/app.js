@@ -19,7 +19,9 @@ angular.module('myApp').config(function($routeProvider, $locationProvider){
           controller: 'ijSignupCtrl'}).
        when('/profile', {templateUrl: '/partials/account/profile',
           controller: 'ijProfileCtrl', resolve: routeRoleChecks.user
-        });
+        }).
+       when('/videos', {templateUrl: '/partials/videos/video-list',
+          controller: 'ijVideoCtrl'});
 });
 
 angular.module('myApp').run(function($rootScope, $location){
