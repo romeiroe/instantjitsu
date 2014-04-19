@@ -18,7 +18,7 @@ angular.module('myApp').config(function($routeProvider, $locationProvider){
        when('/signup', {templateUrl: '/partials/account/signup',
           controller: 'ijSignupCtrl'}).
        when('/profile', {templateUrl: '/partials/account/profile',
-          controller: 'ijProfileCtrl', resolve: routeRoleChecks.users
+          controller: 'ijProfileCtrl', resolve: routeRoleChecks.user
         });
 });
 
