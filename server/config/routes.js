@@ -1,5 +1,6 @@
 var auth = require('./auth'),
     users = require('../controllers/users'),
+    videos = require('../controllers/videos'),
     mongoose = require('mongoose'),
     User = mongoose.model('User');
 
@@ -11,6 +12,8 @@ module.exports = function(app){
    app.post('/api/users', users.createUser);
 
    app.put('/api/users', users.updateUser);
+
+   app.get('api/videos', videos.getVideos);
 
    app.get('/partials/*', function(req, res){
       res.render('../../public/app/' + req.params);
