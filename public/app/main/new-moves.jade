@@ -3,4 +3,5 @@
    .panel-body 
       .row(ng-repeat="video in videos | orderBy:'published':true | limitTo:10")
          .col-md-3 {{video.published | date: 'MMM d'}}
-         .col-md-9 {{video.title}}
+         .col-md-9 
+             a(href="/videos/{{video._id}}") {{video.title}}

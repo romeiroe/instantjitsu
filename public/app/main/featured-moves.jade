@@ -2,4 +2,5 @@
    .panel-heading.text-center Featured Videos
    .panel-body 
       .row(ng-repeat="video in videos | filter:{featured:true}")
-         .col-md-12 {{video.title}}
+         .col-md-12 
+             a(href="/videos/{{video._id}}") {{video.title}}

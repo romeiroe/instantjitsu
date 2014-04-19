@@ -12,5 +12,6 @@
             th Publish Date
          tbody
             tr(ng-repeat="video in videos | filter:searchText | orderBy: sortOrder")
-               td {{video.title}}
+               td 
+                  a(href="/videos/{{video._id}}") {{video.title}}
                td {{video.published | date}}

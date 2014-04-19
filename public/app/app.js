@@ -21,7 +21,10 @@ angular.module('myApp').config(function($routeProvider, $locationProvider){
           controller: 'ijProfileCtrl', resolve: routeRoleChecks.user
         }).
        when('/videos', {templateUrl: '/partials/videos/video-list',
-          controller: 'ijVideoCtrl'});
+          controller: 'ijVideoCtrl'}).
+       when('/videos/:id', {templateUrl: '/partials/videos/video-details',
+          controller: 'ijVideoDetailCtrl'});
+
 });
 
 angular.module('myApp').run(function($rootScope, $location){

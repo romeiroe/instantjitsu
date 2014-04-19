@@ -5,3 +5,9 @@ module.exports.getVideos = function(req, res) {
       res.send(collection);
    })
 };
+
+module.exports.getVideoById = function(req, res) {
+   Video.findOne({_id:req.params.id}).exec(function(err, video){
+      res.send(video)
+   });
+};
